@@ -211,4 +211,76 @@ Compression is learning 🥸
 
 ## [Spatial Broadcast Decoder](https://arxiv.org/pdf/1901.07017.pdf)
 
--
+## [Planning with Diffusion for Flexible Behavior Synthesis](https://arxiv.org/pdf/2205.09991.pdf)
+
+- 2021/10/13
+
+- Common approaches in model-based RL uses a world model separate from the trajectory optimizer / planner. Often times, planners that utilize world models exploit modeling deficiencies, leading to control policies that behave like adversarial samples. This paper proposes to create a diffusion based planner that directly optimizes the trajectory. In this modality, planning is equivalent to sampling from the diffusion process.
+
+
+## [Learning Transferable Visual Models From Natural Language Supervision (CLIP)](https://arxiv.org/pdf/2103.00020.pdf)
+
+- Related: https://arxiv.org/pdf/2002.05709.pdf
+
+## [Generalization with Lossy Affordances: Leveraging Broad Offline Data for Learning Visuomotor Tasks](https://arxiv.org/pdf/2210.06601.pdf)
+
+
+## [Forward-backward Reinforcement Learning](https://arxiv.org/pdf/1803.10227.pdf)
+
+## [Robust imitation of a few demonstrations with a backwards model](https://arxiv.org/pdf/2210.09337.pdf)
+
+## [You Only Live Once: Single-Life Reinforcement Learning](https://arxiv.org/pdf/2210.08863.pdf)
+
+## [Autonomous Reinforcement Learning via Subgoal Curricula](https://arxiv.org/pdf/2107.12931.pdf)
+
+## [Learning the Arrow of Time for Problems in Reinforcement Learning](https://openreview.net/pdf?id=rylJkpEtwS)
+
+## [EPISODIC CURIOSITY THROUGH REACHABILITY](https://arxiv.org/pdf/1810.02274.pdf)
+
+- convert envs from sparse to dense rewards by adding a reachability reward
+
+## [Dynamics-Aware Unsupervised Discovery of Skills](https://arxiv.org/pdf/1907.01657.pdf) 
+
+- 2022/11/26
+
+- Motivation is the maximization of conditional mutual information $I(s';z|s) = H(s'|s) - H(s'|z,s)$, which makes the agent maximize state diversity and also make current skill more informative about future states.
+- First train agent on intrinsic reward by jointly training intrinsic reward and policy. Then apply to environments using MPC via the learned skill-dynamics.
+
+## [Random Network Distillation]()
+
+- 2022/11/27
+
+- Another instance of tyring to solve the static TV problem. Propose a fixed random network and a parallel predictor network. Intrinsic reward calculated by the difference between the two outputs. As the predictor get better at predicting the random network, the intrinsic reward decreases. This removes the rependency on next state prediction, thus fixing the static TV problem.
+
+## [Never Give Up: Learning Directed Exploration Strategies](https://arxiv.org/pdf/2002.06038.pdf)
+
+## [Space is a latent sequence: Structured sequence learning as a unified theory of representation in the hippocampus](https://arxiv.org/pdf/2212.01508.pdf)
+
+- 2022/12/16
+- Mental representation of space as a sequence learning problem. Cloned HMMs are used to create separate contexts to disambiguate similar observations from different states. Cloned HMMs can be used to construct a place field.
+
+## [Act2Vec](https://arxiv.org/pdf/1902.01119.pdf)
+
+- 2022/12/16
+- Actions that result in similar state transitions should be close in embedding vector space.
+- Use action embeddings for state augmentation: SxA^H -> A
+
+- Thoughts: we need 1. longer action horizons, 2. multidimensional actions, 3. complex environments with high state dimensions (use state embeddings as well)
+- Actions improve state representation, -> state representation improves action representation? Can they improve each other?
+
+## [Learning Action Representations for Reinforcement Learning](https://arxiv.org/abs/1902.00183)
+
+- 2022/12/16
+- Action representation as supervised learning. Aligns actions based on their impacts on the state.
+- Internal policy: SxE->[probability], and factorized policy: E->A. Internal policy can be sampled to output embeddings and factorized policy can be used to output actions.
+
+## [Masked Visual Pre-training for Motor Control](https://arxiv.org/pdf/2210.03109.pdf)
+
+- 2022/12/24
+- Use real-world datasets to pretrain masked vison transformer. Then use the pre-trained model to learn motor control policies using PPO. Introduced new benchmark (PixMC) on Issac Gym.
+
+
+## [Training Robots to Evaluate Robots: Example-Based Interactive Reward Functions for Policy Learning](https://arxiv.org/pdf/2212.08961.pdf)
+
+- 2022/12/24
+- Interactive reward functions: Some tasks require interaction to verify success. Can this be used to create reward functions for RL? IRF first bootstraps a policy on single observation rewards functions (i.e. image classifiers) to create negative actionable outcome examples. Next the IRF policy is trained on positive and negative samples be maximizing the single observation reward - the policy acts on the final state and determines whether the task was successful. Finally, the IRF reward is used to train a policy on the original task to maximize the IRF reward.
