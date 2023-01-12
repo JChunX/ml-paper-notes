@@ -224,8 +224,16 @@ Compression is learning 🥸
 
 ## [Generalization with Lossy Affordances: Leveraging Broad Offline Data for Learning Visuomotor Tasks](https://arxiv.org/pdf/2210.06601.pdf)
 
+- 2022/12/24
+- Offline data can be used to train affordance models $m(z'|z,u)$, where u is a learned latent code representing transition from z to z'. An optimal plan is generated be recursively sampling the affordance model and choosing the best path via MPPI.
+- First train offline RL to learn policy, value function, Q function via learned latents. The affordance model training objective is $D_{KL}(p_m(z'|z) || \phi(z'|s'))$ where $\phi(z'|s')$ is the encoding of the next state $s'$, and $p_m(z'|z)$ is the marginal distribution of the affordance model. Transition encoding $u$ can be learned under a conditional variational autoencoder framework. 
+- During fine-tuning, the policy, value function, Q function are trained with latent distances acting as the reward.
 
 ## [Forward-backward Reinforcement Learning](https://arxiv.org/pdf/1803.10227.pdf)
+
+- 2022/12/26
+- Use imagined and real experiences to learn values
+- (in addition to learning from forward steps, also learn values from imagined backward steps)
 
 ## [Robust imitation of a few demonstrations with a backwards model](https://arxiv.org/pdf/2210.09337.pdf)
 
@@ -284,3 +292,8 @@ Compression is learning 🥸
 
 - 2022/12/24
 - Interactive reward functions: Some tasks require interaction to verify success. Can this be used to create reward functions for RL? IRF first bootstraps a policy on single observation rewards functions (i.e. image classifiers) to create negative actionable outcome examples. Next the IRF policy is trained on positive and negative samples be maximizing the single observation reward - the policy acts on the final state and determines whether the task was successful. Finally, the IRF reward is used to train a policy on the original task to maximize the IRF reward.
+
+## [Mastering Diverse Domains through World Models (Dreamer-V3)] (https://arxiv.org/pdf/2301.04104v1.pdf)
+
+- 2023/01/12
+- 
