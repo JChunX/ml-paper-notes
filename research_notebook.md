@@ -7,3 +7,8 @@
   - Reverse policy tries to reverse it using goal directed reinforcement learning
   - Forward policy gets rewarded based on how well the reverse policy performs on the trajectory
   - Backward policy gets a masked version of forward trajectory -> encourages forward policy to generate trajectories that are easy to reverse?
+
+  - Offline reverse RL?
+    - 1. train decision transformer on offline data
+    - 2. fine-tune for reversible interactions
+    - Use a shared world model with forward agent

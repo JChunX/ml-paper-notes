@@ -296,4 +296,20 @@ Compression is learning 🥸
 ## [Mastering Diverse Domains through World Models (Dreamer-V3)] (https://arxiv.org/pdf/2301.04104v1.pdf)
 
 - 2023/01/12
+- Discrete VAE encodes sensory information, Recurrent State Space Model as world model. Train actor critic on imagined states. Use Symlog transformation for reward/value normalization across domains to avoid hyperparameter tuning.
+
+## [Just Go with the Flow: Self-Supervised Scene Flow Estimation](https://just-go-with-the-flow.github.io)
+
+- 2023/01/13
+- Two self-supervised losses: Nearest neighbor loss, Cycle consistency loss.
+- Nearest neightbor loss: distance between predicted pointcloud and nearest neighbor in ground truth t+1 pointcloud.
+  - Problems: potential large errors in prediction, point correspondance uniqueness is not guaranteed, lack of neighbors in sparse pointclouds.
+- Cycle consistency loss: Reverse the predicted flow back to original pointcloud at t and compare to ground truth pointcloud at t. Helps avoid degenerate solutions.
+- Anchored cycle consistency loss: Problem: predicted flow is noisy. Reversing noisy flow is ill-posed. Solution: Create anchor point from convex combination of predicted flow and its nearest neighbor. Anchor point is used to reverse flow.
+
+## [SLIM: Self-Supervised LiDAR Scene Flow and Motion Segmentation](https://baurst.github.io/slim/)
+
+## [PointPillARS: Fast Encoders for Object Detection from Point Clouds](https://arxiv.org/pdf/1812.05784.pdf)
+
+- 2023/01/15
 - 
